@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-slate-600">
+    <div>
+      <h4 class="text-3xl text-white flex justify-center m-6">ToDO</h4>
+    </div>
+    <form id="form">
+      <!-- This div is used to take input  -->
+      <div
+        class="w-4/5 bg-white rounded-md flex mx-auto h-12 items-center justify-between mb-12"
+      >
+        <input
+          type="text"
+          name="Todo"
+          id="input"
+          placeholder="Enter Your ToDo"
+          class="w-4/5 rounded-l-md p-3 focus:outline-none"
+        />
+        <button
+          type="submit"
+          id="add"
+          class="bg-slate-600 text-white rounded-md w-14 h-10 m-2"
+        >
+          Add
+        </button>
+      </div>
+      <!-- This div will store all the ToDo's  -->
+      <div
+        class="w-4/5 bg-white rounded-md rounded-br-none rounded-bl-none flex mx-auto p-8 flex-col h-[330px] overflow-auto"
+        id="task"
+      >
+        <div class="flex justify-center items-center h-full">
+          <lottie-player
+            class="mx-auto bg-transparent md:w-[60%] w-full flex justify-center"
+            id="lottie"
+            autoplay
+            loop
+            mode="normal"
+            src="https://assets-v2.lottiefiles.com/a/66467176-1151-11ee-84d5-4b47bc9e14f2/HI703amHqk.json"
+          >
+          </lottie-player>
+        </div>
+        <div class="" id="todo-list"></div>
+        <!-- <div class="border-b border-slate-600 w-full flex justify-between mb-4">
+          <div class="flex">
+            <input class="mr-4" type="checkbox" name="checkbox" id="checkbox" />
+            <p>sdf s sdf sd</p>
+          </div>
+          <div class="flex">
+            <img src="edit-regular.svg" alt="edit" id="edit" class="w-5 mr-3" />
+            <img src="trash-solid.svg" alt="trash" id="trash" class="w-4" />
+          </div>
+        </div> -->
+      </div>
+    </form>
+    <!-- This is for check remain task and clear all task  -->
+    <div
+      class="w-4/5 bg-white rounded-md flex mx-auto h-12 items-center justify-between p-8 rounded-tr-none rounded-tl-none"
+    >
+      <span>You have <span id="pending-tasks">0</span> remaining task.</span>
+      <button
+        type="submit"
+        id="clear"
+        class="bg-slate-600 text-white rounded-md w-20 h-10"
+      >
+        Clear All
+      </button>
+    </div>
+  </body>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/lottie-player.js"></script>
+  <script src="main.js"></script>
+</html>
