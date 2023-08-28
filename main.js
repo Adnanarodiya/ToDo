@@ -7,6 +7,12 @@ const pendingNo = document.getElementById('pending-tasks');
 const clearBtn = document.getElementById('clear');
 const todoList = document.getElementById('todo-list');
 const form = document.getElementById('form');
+const saveBtn = document.getElementById('saveBtn');
+const closeBtn = document.getElementById('closeBtn');
+const overlay = document.getElementById('overlay');
+const model = document.getElementById('model');
+const closeModel = document.getElementById('closeModel');
+const editedText = document.getElementById('editedText');
 
 let Tasks = [];
 let remainingTaskCount = 0;
@@ -74,7 +80,28 @@ const addTodo = newTask => {
   editDetails.appendChild(trashImg);
   trashImg.src = 'trash-solid.svg';
 
-  //this will work edit task funcition
+  //   //this will work edit task funcition
+
+  editImg.addEventListener('click', () => {
+    overlay.style.display = 'flex';
+    const index = Tasks.find(t => t.id === newTask.id);
+    editedText.value = index.input;
+  });
+
+  //this will work  save btn in pop-up
+
+  saveBtn.addEventListener('click', () => {
+    const index = Tasks.find(t => t.id === newTask.id);
+    index.input = editedText.value;
+    inputSpan.textContent = editedText.value;
+    overlay.style.display = 'none';
+  });
+
+  //this will work to close the pop-up
+
+  closeBtn.addEventListener('click', () => {
+    overlay.style.display = 'none';
+  });
 
   // this will work delete the task
   trashImg.addEventListener('click', () => {
